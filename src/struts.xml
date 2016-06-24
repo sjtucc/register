@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<constant name="struts.multipart.maxSize" value="10701096" />
+     <package name="hello" namespace="/sap" extends="struts-default">
+ 	
+	    <action name="party" class="cn.sap.action.HelloWorldAction" method="execute" >
+		    <result name="success">/WEB-INF/page/success.jsp</result>
+		    <result name="error">/WEB-INF/page/error.jsp</result>
+		    <result name="index">/index.jsp</result>
+	    </action>
+	
+		<action name="partyoff" class="cn.sap.action.ByeWorldAction" method="execute" >
+		    <result name="success">/WEB-INF/page/success.jsp</result>
+		    <result name="error">/WEB-INF/page/error.jsp</result>
+		    <result name="index">/index.jsp</result>
+	    </action>
+	    
+	    <action name="admin_*" class="cn.sap.action.AdminPerformAction" method="{1}" >
+		    <result name="admin">/WEB-INF/page/admin.jsp</result>
+		    <result name="login">/login.jsp</result>
+	    </action>
+	
+     </package> 
+ 
+
+</struts>
